@@ -1,3 +1,4 @@
+// Remplace TOUT le contenu de Contact.tsx par cette version corrigée :
 "use client"
 
 import { useState } from 'react'
@@ -27,7 +28,6 @@ export function Contact() {
     setIsSubmitting(true)
     
     try {
-      // Simulation d'envoi - Remplace par ton API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -54,7 +54,6 @@ export function Contact() {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
-      // Reset status après 5 secondes
       setTimeout(() => setSubmitStatus('idle'), 5000)
     }
   }
@@ -62,7 +61,6 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-white dark:bg-sumi-900 relative overflow-hidden">
       
-      {/* Animations d'arrière-plan subtiles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <div
@@ -84,7 +82,6 @@ export function Contact() {
 
       <div className="container mx-auto px-4 relative z-10">
         
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-sumi-900 dark:text-white mb-4">
             Contactez-moi
@@ -96,7 +93,6 @@ export function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Informations de contact */}
           <div>
             <h3 className="text-2xl font-semibold text-sumi-900 dark:text-white mb-8">
               Restons en contact
@@ -134,7 +130,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Disponibilité */}
             <div className="p-6 bg-gradient-to-r from-sakura-50 to-fuji-50 dark:from-sumi-800 dark:to-sumi-700 rounded-2xl border border-sakura-200 dark:border-sumi-600">
               <h4 className="font-semibold text-sumi-900 dark:text-white mb-2 flex items-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
@@ -149,11 +144,9 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Formulaire */}
           <div>
             <div className="bg-white dark:bg-sumi-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-sumi-700">
               
-              {/* Status messages */}
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg flex items-center space-x-2">
                   <CheckCircle className="text-green-500" size={20} />
@@ -167,14 +160,13 @@ export function Contact() {
                 <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg flex items-center space-x-2">
                   <AlertCircle className="text-red-500" size={20} />
                   <span className="text-red-700 dark:text-red-300 font-medium">
-                    Erreur lors de l'envoi. Réessayez ou contactez-moi directement.
+                    Erreur lors de l&apos;envoi. Réessayez ou contactez-moi directement.
                   </span>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 
-                {/* Nom et Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-sumi-700 dark:text-sumi-300 mb-2">
@@ -207,7 +199,6 @@ export function Contact() {
                   </div>
                 </div>
                 
-                {/* Type de projet et Budget */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-sumi-700 dark:text-sumi-300 mb-2">
@@ -249,7 +240,6 @@ export function Contact() {
                   </div>
                 </div>
                 
-                {/* Timeline */}
                 <div>
                   <label className="block text-sm font-medium text-sumi-700 dark:text-sumi-300 mb-2">
                     Timeline souhaitée
@@ -268,7 +258,6 @@ export function Contact() {
                   </select>
                 </div>
                 
-                {/* Message */}
                 <div>
                   <label className="block text-sm font-medium text-sumi-700 dark:text-sumi-300 mb-2">
                     Décrivez votre projet *
@@ -284,7 +273,6 @@ export function Contact() {
                   ></textarea>
                 </div>
                 
-                {/* Submit button */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -304,7 +292,7 @@ export function Contact() {
                 </button>
                 
                 <p className="text-xs text-center text-sumi-500 dark:text-sumi-400">
-                  En envoyant ce formulaire, vous acceptez d'être contacté concernant votre projet.
+                  En envoyant ce formulaire, vous acceptez d&apos;être contacté concernant votre projet.
                 </p>
               </form>
             </div>
