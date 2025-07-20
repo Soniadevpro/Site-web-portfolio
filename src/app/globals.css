@@ -1,26 +1,149 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-drift {
+    animation: drift 12s linear infinite;
+  }
+  
+  .animate-morph {
+    animation: morph 6s ease-in-out infinite;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px) rotate(90deg); 
+    opacity: 0.5;
+  }
+  50% { 
+    transform: translateY(-10px) translateX(-5px) rotate(180deg); 
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translateY(-30px) translateX(15px) rotate(270deg); 
+    opacity: 0.4;
+  }
+}
+
+@keyframes drift {
+  from { 
+    transform: translateX(-100px); 
+    opacity: 0;
+  }
+  10%, 90% { 
+    opacity: 0.3; 
+  }
+  to { 
+    transform: translateX(calc(100vw + 100px)); 
+    opacity: 0;
+  }
+}
+
+@keyframes morph {
+  0%, 100% { 
+    border-radius: 50%; 
+    transform: scale(1);
+  }
+  25% { 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+    transform: scale(1.1);
+  }
+  50% { 
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; 
+    transform: scale(0.9);
+  }
+  75% { 
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; 
+    transform: scale(1.05);
+  }
+}
+@layer components {
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-drift {
+    animation: drift 20s linear infinite;
+  }
+  
+  .animate-wave {
+    animation: wave 15s ease-in-out infinite;
+  }
+  
+  .animate-wave-reverse {
+    animation: wave-reverse 20s ease-in-out infinite;
+  }
+}
+
+@keyframes wave {
+  0%, 100% { 
+    clip-path: polygon(0% 60%, 25% 40%, 50% 80%, 75% 20%, 100% 60%, 100% 100%, 0% 100%);
+  }
+  25% { 
+    clip-path: polygon(0% 40%, 25% 60%, 50% 20%, 75% 80%, 100% 40%, 100% 100%, 0% 100%);
+  }
+  50% { 
+    clip-path: polygon(0% 80%, 25% 20%, 50% 60%, 75% 40%, 100% 80%, 100% 100%, 0% 100%);
+  }
+  75% { 
+    clip-path: polygon(0% 20%, 25% 80%, 50% 40%, 75% 60%, 100% 20%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes wave-reverse {
+  0%, 100% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 75% 80%, 50% 20%, 25% 60%, 0% 40%);
+  }
+  33% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 75% 20%, 50% 80%, 25% 40%, 0% 60%);
+  }
+  66% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 75% 60%, 50% 40%, 25% 80%, 0% 20%);
+  }
+}
+
+@keyframes drift {
+  from { 
+    transform: translateX(-50px); 
+    opacity: 0;
+  }
+  10%, 90% { 
+    opacity: 0.4; 
+  }
+  to { 
+    transform: translateX(calc(100vw + 50px)); 
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-15px) translateX(5px) rotate(90deg); 
+    opacity: 0.5;
+  }
+  50% { 
+    transform: translateY(-8px) translateX(-3px) rotate(180deg); 
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translateY(-20px) translateX(8px) rotate(270deg); 
+    opacity: 0.4;
+  }
 }
