@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ThemeToggle } from '../ui/theme-toggle'
-import { Menu, X, Coffee, Sparkles } from 'lucide-react'
+import { Menu, X, Coffee} from 'lucide-react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

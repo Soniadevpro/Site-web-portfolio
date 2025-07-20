@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Code, Coffee, Award, Users, Heart, Zap, Star, Briefcase } from 'lucide-react'
+import { Code, Users, Heart, Zap, Star, Briefcase } from 'lucide-react'
 
 export function About() {
   const [activeTab, setActiveTab] = useState('tech')
@@ -66,7 +66,7 @@ export function About() {
             À propos de moi
           </h2>
           <p className="text-xl text-sumi-600 dark:text-sumi-300 max-w-2xl mx-auto">
-            Développeuse avec 10 ans d'expérience client et une passion pour la technologie
+            Développeuse avec 10 ans d&apos;expérience client et une passion pour la technologie
           </p>
         </div>
 
@@ -99,14 +99,14 @@ export function About() {
             <div className="max-w-lg mx-auto lg:mx-0">
               <p className="text-lg text-sumi-600 dark:text-sumi-300 mb-6 leading-relaxed">
                 <strong>Reconversion réussie</strong> du commerce vers le développement ! 
-                Je combine ma passion pour la tech avec 10 ans d'expérience en relation client 
+                Je combine ma passion pour la tech avec 10 ans d&apos;expérience en relation client 
                 et service.
               </p>
               
               <p className="text-sumi-600 dark:text-sumi-300 mb-8 leading-relaxed">
                 Cette double expertise me permet de créer des solutions techniques qui 
                 <strong> répondent vraiment aux besoins utilisateurs</strong>, avec une approche 
-                centrée sur l'expérience et la satisfaction client.
+                centrée sur l&apos;expérience et la satisfaction client.
               </p>
               
               {/* Ma différence */}
@@ -116,7 +116,7 @@ export function About() {
                   Ma différence
                 </h3>
                 <p className="text-sumi-600 dark:text-sumi-300 italic">
-                  "Je ne code pas juste pour coder, je développe des solutions qui font vraiment sens pour les utilisateurs et les entreprises."
+                  &quot;Je ne code pas juste pour coder, je développe des solutions qui font vraiment sens pour les utilisateurs et les entreprises.&quot;
                 </p>
               </div>
             </div>
